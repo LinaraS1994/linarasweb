@@ -1,256 +1,242 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-/*@font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-Bold.otf') format('opentype');
-    font-weight: bold;
+@font-face {
+    font-family: 'NeueMontreal-Regular';
+    src: url('resources/fonts/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-BoldItalic.otf') format('opentype');
-    font-weight: bold;
-    font-style: italic;
-}*/
-
-@font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-Italic.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-Light.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'NeueMontreal-Medium';
+    src: url('resources/fonts/NeueMontreal-Medium.otf') format('opentype');
+    font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-LightItalic.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'NeueMontreal-RegularItalic';
+    src: url('resources/fonts/NeueMontreal-Italic.otf') format('opentype');
+    font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-Medium.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-MediumItalic.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'NeueMontreal-MediumItalic';
+    src: url('resources/fonts/NeueMontreal-MediumItalic.otf') format('opentype');
+    font-weight: 500;
     font-style: italic;
-}
-
-@font-face {
-    font-family: 'Neue Montreal';
-    src: url('./resources/fonts/NeueMontreal-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
 }
 
 body {
-    background-color: #0C0B0A;
     color: #F8F8F8;
-    font-family: 'Neue Montreal';
+    background-color: #0C0B0A;
+    line-height: 130%;
+    font-size: 16px;
+    font-family: 'NeueMontreal-Regular';
 }
 
-.non-mobile {
-    display: none;
+body * {
+    /*border: 1px solid #ffffff;*/
+} 
+
+#lets-go {
+    display: inline-block;
+    animation: bounce 3s infinite;
 }
 
-@media screen and (max-width: 450px) {
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+}
 
 header {
     display: flex;
+    padding: 16px;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
-#main-logo {
-    width: 3rem;
+header nav ul {
+    list-style: none;
+    display: flex;
 }
 
-header a {
+header nav ul a {
+    color: #F8F8F8;
+    text-decoration: none;
+}
+
+#logo {
+    width: 2.25em;
+}
+
+nav li:nth-child(1),
+nav li:nth-child(2) {
+    display: none;
+}
+
+.welcome-description {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    margin-bottom: 36px;
+}
+
+.welcome-description img {
+    max-width: auto;
+    max-height: auto;
+    min-height: 279px;
+    object-fit: cover;
+}
+
+.welcome-description h1 {
+    margin: -1.2em 16px 0;
+    flex: 1;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 80%; 
+    text-transform: uppercase;
+}
+
+.welcome-description h1 span:first-child {
+    float: left;
+    margin-bottom: 2px;
+}
+
+.welcome-description h1 span:last-child {
+    float: right;
+}
+
+.welcome-rel {
+    margin-left: 5em;
+}
+
+.welcome-rel p {
+    margin-bottom: 16px;
+}
+
+.welcome-rel a {
     text-decoration: none;
     color: #F8F8F8;
-    font-size: 0.9375rem;
+    margin-top: 0;
+}
+
+.about-description {
+    border-top: 1px solid rgba(153, 51, 8, 0.5);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    margin-bottom: 2.25em;
+}
+
+.about-description h2 {
+    padding-top: 16px;
+    cursor: pointer;
+    color: rgba(153, 51, 8, 0.5);
+    text-transform: uppercase;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-}
-
-.welcome {
-    padding-bottom: 25%;
-    height: 75%;
-    overflow: hidden;
-    position: relative;
-}
-
-.welcome h1 {
-    font-size: 2.625rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 80%;
-    text-transform: uppercase;
-    padding-left: 5%;
-    margin-top: 0;
-    overflow: visible;
-    z-index: 1;
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.welcome p {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-    padding-top: 7%;
-    padding-left: 23%;
-}
-
-.welcome img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    transform: scale(1.5);
-    height: 75%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-#down-btn {
-    width: 3%;
-    padding-top: 3%;
-    padding-left: 17%;
 }
 
 .about {
-    padding-bottom: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.about-border {
-    border-top: 1px solid #993308;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.about h2 {
+.about-content h3 {
+    margin-top: 10px;
     color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.75rem;
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 130%;
-    opacity: 0.5;
+    line-height: 100%; /* 24px */
     text-transform: uppercase;
-    padding-top: 5%;
+    margin-bottom: 0;
 }
 
-.about h3 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 1.5rem */
-    text-transform: uppercase;
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.about p {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.875rem;
+.about-content p {
+    margin-top: 10px;
+    color: #828181;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    padding-top: 5%;
-    padding-left: 23%;
-    padding-right: 5%;
+    width: 287px;
+    float: right;
 }
 
-.about img {
+.about-content img {
+    max-width: auto;
+    max-height: auto;
+    object-fit: cover;
     width: 100%;
-    padding-top: 5%;
-    filter: saturate(0);
+    height: auto;
+    filter: grayscale(1);
 }
 
-.expertise {
-    padding-bottom: 10%;
+.experience {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.expertise-border {
-    border-top: 1px solid #993308;
-    margin-left: 5%;
-    margin-right: 5%;
+.experience-description {
+    border-top: 1px solid rgba(153, 51, 8, 0.5);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    width: auto;
 }
 
-.expertise h2 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.75rem;
+.experience-description h2 {
+    padding-top: 16px;
+    cursor: pointer;
+    color: rgba(153, 51, 8, 0.5);
+    text-transform: uppercase;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-    opacity: 0.5;
-    text-transform: uppercase;
-    padding-top: 5%;
 }
 
-.expertise h3 {
+.experience-content h3 {
+    margin: 0 auto;
     color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-style: normal;
     font-weight: 500;
-    line-height: 100%; /* 1.5rem */
+    line-height: 100%; /* 24px */
     text-transform: uppercase;
-    padding-top: 5%;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding-top: 10px;
 }
 
-.expertise p {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.875rem;
+.experience-content > p {
+    width: 287px;
+    color: #828181;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    padding-top: 5%;
-    padding-left: 23%;
-    padding-right: 5%;
+    margin-left: 5.4em;
 }
 
 .accordion {
     display: flex;
+    margin-top: 2em;
     flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
 .accordion-section a {
@@ -271,43 +257,37 @@ header a {
 }
 
 .accordion-section {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 20px 0;
     border-top: 1px solid rgba(248, 248, 248, 0.40);
 }
 
 .accordion-content {
     display: none;
-    padding-top: 5%;
-    margin-left: -3%;
-    margin-right: -3%;
+    padding-top: 3%;
 }
 
 .two-column-layout {
     display: flex;
+    gap: 10px;
 }
 
 .column.date-column {
     flex: 35; 
-    padding: 10px; 
     color: #828181;
 }
 
 .column.info-column {
     flex: 45; 
-    padding: 10px; 
     color: #818181;
 }
 
 .column.info2-column {
     flex: 45; 
-    padding: 10px; 
     color: #818181;
 }
   
 .column.description-column {
     flex: 65; 
-    padding: 10px;
     color: #828181;
 }
 
@@ -323,148 +303,154 @@ header a {
 
 .end-line-desc {
     flex: 45; 
-    padding: 10px; 
     color: #f8f8f8;
 }
 
 .languages {
-    border-bottom: 1px solid rgba(248, 248, 248, 0.40); 
-    margin-bottom: 60%;
-}
-
-.works {
-    border-top: 1px solid #993308;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.works h2 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
-    opacity: 0.5;
-    text-transform: uppercase;
-    padding-top: 5%;
-}
-
-.works h3 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 1.5rem */
-    text-transform: uppercase;
-    padding-top: 5%;
-    padding-right: 5%;
-}
-
-.works p {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    padding-top: 5%;
-    padding-left: 23%;
-    padding-right: 5%;
-}
-
-.projects {
-    display: grid;
-    grid-template-columns: 1fr; /* One centered column */
-    grid-template-rows: repeat(7, 1fr); /* Seven rows */
-    gap: 0.5rem; /* Adjust the gap between rows if needed */
-    margin-right: 5%;
-    margin-left: 5%;
-    place-items: center;
-    margin-top: 1.5rem;
-}
-
-.grid-item {
-    background-color: #f0f0f0;
-    padding: 1rem;
-    place-items: center;
-    width: 100%;
-    height: 13.125rem;
-    display: flex;
-}
-
-.grid-item h2 {
-    opacity: 1;
-    color: white;
-    text-align: center;
-    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
-    font-family: Neue Montreal;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 110%;
-    width: 100%;
-}
-
-#project1 {
-    background-image: url(./pics/Ufa.jpg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project2 {
-    background-image: url(./pics/BarcelonaAir.jpg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project3 {
-    background-image: url(./pics/UfaPublicPlaces.jpg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project4 {
-    background-image: url(./pics/UfaMethodology.jpg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project5 {
-    background-image: url(./pics/YerevanHeatIsland.jpeg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project6 {
-    background-image: url(./pics/YerevanHousing.jpeg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
-}
-
-#project7 {
-    background-image: url(./pics/YerevanGreenery.jpeg);
-    background-size: cover;
-    background-position: center center;
-    height: 13.125rem;
-    width: 100%;
+    border-bottom: 1px solid rgba(248, 248, 248, 0.40);
 }
 
 .project {
     cursor: pointer;
+}
+
+.proj-desc-2 h3 {
+    margin: 0 auto;
+    color: #F8F8F8;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+.proj-desc-2 p {
+    width: 287px;
+    color: #828181;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-left: 5.4em;
+}
+
+.projects-description > h2 {
+    padding-top: 16px;
+    color: rgba(153, 51, 8, 0.5);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.projects-description {
+    border-top: 1px solid rgba(153, 51, 8, 0.5);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    margin-top: 7.5em;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr)); 
+    place-items: stretch;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+}
+
+.projects-container {
+
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item h2 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
+    font-family: 'NeueMontreal-Regular';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    width: 100%;
+    padding-top: 5.5em;
+    padding-bottom: 6em;
+    cursor: pointer;
+}
+
+#project1 {
+    background-image: url(./resources/pics/Ufa.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+}
+
+#project2 {
+    background-image: url(./resources/pics/BarcelonaAir.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+}
+
+#project3 {
+    background-image: url(./resources/pics/UfaPublicPlaces.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+}
+
+#project4 {
+    background-image: url(./resources/pics/UfaMethodology.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+    display: none;
+}
+
+#project5 {
+    background-image: url(./resources/pics/YerevanHeatIsland.jpeg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+    display: none;
+}
+
+#project6 {
+    background-image: url(./resources/pics/YerevanHousing.jpeg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+    display: none;
+}
+
+#project7 {
+    background-image: url(./resources/pics/YerevanGreenery.jpeg);
+    background-size: cover;
+    background-position: center center;
+    height: 13.125em;
+    width: 100%;
+    display: none;
 }
 
 .modal {
@@ -488,12 +474,18 @@ header a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border: 1px solid black;
+}
+
+.modal-content > * {
+    /*border: 1px solid black;*/
 }
 
 .modal-content img {
     max-width: 100%;  
-    height: auto;
+    height: 40%;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 .modal-content h4 {
@@ -513,13 +505,11 @@ header a {
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-    margin-top: 1%;
     position: relative;
     box-sizing: border-box;
     margin-left: 5%;
     column-count: 2;
     margin-bottom: 5%;
-    padding-top: 10%;
     padding-right: 5%;
 }
 
@@ -529,7 +519,7 @@ header a {
     font-style: normal;
     font-weight: normal;
     line-height: 110%;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: 5%;
     position: relative;
     box-sizing: border-box;
@@ -543,7 +533,7 @@ header a {
     font-style: normal;
     font-weight: 400;
     line-height: 130%;
-    margin-top: 5%;
+    margin-top: 1%;
     position: relative;
     box-sizing: border-box;
     margin-right: 5%;
@@ -558,1384 +548,866 @@ header a {
 }
 
 .text1 {
-    font-weight: 2800;
+    color: #313131;
 }
 
 .text2 {
     color: #A3A3A3;
 }
 
-/*#show-more {
-    width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
-    height: 25%;
-    background-color: #0C0B0A;
+#showMoreButton {
+    width: 100%;
+    margin-top: 30px;
     color: #F8F8F8;
+    background-color: #0C0B0A;
+    height: 56px;
+    text-transform: uppercase;
     border: 1px solid #F8F8F8;
-    font-size: 0.9375rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 120%;
-    letter-spacing: -0.01875rem;
-    margin-top: -50%;
-}*/
-
-.hidden {
-    display: grid;
-    grid-template-columns: 1fr; /* One centered column */
-    grid-template-rows: repeat(7, 1fr); /* Seven rows */
-    gap: 0.5rem; /* Adjust the gap between rows if needed */
-    margin-right: 5%;
-    margin-left: 5%;
-    place-items: center;
-    height: 13.125rem;
-    margin-top: -10%;
-    /*display: none;*/
-    width: 100%;
 }
 
-#open-modal-btn {
-    cursor: pointer;
-}
-
-.container {
-    width: 100%;
-    height: 25%;
-    /*margin-top: -48%;*/
-}
-
-.visible {
-    display: grid;
-    grid-template-columns: 1fr; /* One centered column */
-    grid-template-rows: repeat(7, 1fr); /* Seven rows */
-    gap: 1rem; /* Adjust the gap between rows if needed */
-    margin-right: 5%;
-    margin-left: 5%;
-    place-items: center;
-    height: 13.125rem;
-    margin-top: -110%;
-}
-
-.ps-text {
-    width: 95%;
-    margin: 25% auto;
-    font-size: 1.375rem;
+.projects-closing-text {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5em;
+    margin-bottom: 2.5em;
+    font-size: 22px;
     font-style: italic;
     font-weight: 400;
     line-height: 120%;
-    padding-left: 5%;
-    padding-right: 5%;
-    /*margin: 10% auto;
-    padding-top: 15%;
-    padding-bottom: 15%;*/
-}
-
-.crimson-text {
-    color: #993308;
-}
-
-.contacts {
-    border-top: 1px solid #993308;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 15%;
-}
-
-.contacts h3 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 1.5rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 1.5rem */
-    text-transform: uppercase;
-    padding-top: 5%;
-    padding-right: 5%;
 }
 
 .contacts h2 {
-    color: #F8F8F8;
-    font-family: Neue Montreal;
-    font-size: 0.75rem;
+    color: rgba(153, 51, 8, 0.5);
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-    opacity: 0.5;
+}
+
+.contacts-description {
+    border-top: 1px solid rgba(153, 51, 8, 0.5);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+}
+
+.last-header {
+    padding: 16px;
+    cursor: pointer;
+    color: rgba(153, 51, 8, 0.5);
     text-transform: uppercase;
-    padding-top: 5%;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
 }
 
-.contacts p {
-    width: 65%;
-    margin: 5% auto;
+.contacts {
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.contacts p > a {
+.contacts-content h3 {
+    margin-top: 10px;
+    color: #F8F8F8;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 24px */
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.contacts ul {
+    list-style: none;
+    margin-left: 2em;
+}
+
+.links ul a {
     text-decoration: none;
     color: #F8F8F8;
-    font-family: Neue Montreal;
+    line-height: 140%;
+}
+
+.svg-links {
+    display: flex;
+    width: 7em;
+    max-width: 100%;
+    margin-left: 4em;
+}
+
+.svg-links img {
+    width: 3.5em;
+}
+
+.red-ps {
+    color: rgb(153, 51, 8);
+}
+
+#telegram {
+    width: 2.7em;
+    padding: 0.35em;
+}
+
+@media screen and (min-width: 1280px) {
+
+body > * {
+
+}
+
+header {
+    border-bottom: 1px solid #F8F8F8;
+    margin-left: 0;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    margin-bottom: 4.5em;
+}
+
+nav li:nth-child(1),
+nav li:nth-child(2) {
+    display: block;
+    margin-right: 2.5em;
+}
+
+.welcome {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
+
+.welcome-description h1 {
+    margin: -1.2em 0px 0;
+    flex: 1;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 80%; /* 85.6px */
+    text-transform: uppercase;
+}
+
+.welcome-description {
+    margin-bottom: 152px;
+}
+
+.first-line {
+    margin-top: -1%;
+}
+
+.second-line {
+    margin-top: 1%;
+}
+
+.welcome-rel p {
+    color: #828181;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-left: 20%;
+    margin-top: 42px;
+    margin-bottom: 16px;
+}
+
+.welcome-rel a {
+    margin-left: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.about {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
+
+.about-description {
+    margin-bottom: 180px;
+}
+
+.about-description h2 {
+    padding: 0;
+    margin: 30px 0 0;
+    width: 45px;
+}
+
+.about-content img {
+    margin-left: 20%;
+    width: 80%;
+}
+
+.about-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: -2.5%;
+}
+
+.about-content p {
+    float: left;
+    margin-left: 20%;
+    width: 430px;
+}
+
+.experience {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
+
+.experience-description h2 {
+    padding: 0;
+    margin: 30px 0 0;
+    width: 80px;
+}
+
+.experience-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: -2.5%;
+    padding: 0;
+}
+
+.experience-content > p {
+    margin-left: 20%;
+    width: 430px;
+}
+
+.accordion {
+    margin-left: 20%;
+    margin-bottom: 180px;
+}
+
+.projects-description{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.projects {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
+
+.projects-description > h2 {
+    padding-top: 0;
+    margin-top: 30px;
+    color: rgba(153, 51, 8, 0.5);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    width: 80px;
+}
+
+.proj-desc-2 h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: -3.5%;
+    padding: 0;
+}
+
+.proj-desc-2 p {
+    margin-left: 20%;
+    width: 430px;
+}
+
+.projects-closing-text {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 180px;
+    margin-bottom: 50px;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.red-ps {
+    margin-left: 5px;
+}
+
+.first-line-end {
+    margin-left: 20%;
+}
+
+.second-line-end {
+
+}
+
+.grid-item h2 {
+    opacity: 0;
+}
+
+.grid-item h2:hover {
+    opacity: 1;
+}
+
+.projects-container {
+    width: auto;
+    margin-left: 20%;
+}
+
+#project1 {
+    width: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    height: 93%;
+    width: 70%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.modal-content img {
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 0;
+    object-fit: cover;
+    height: 50%;
+}
+
+.modal-content h4 {
+    width: 30%;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    margin-top: 5%;
+    margin-left: 5%;
+    box-sizing: border-box;
+}
+  
+.modal-content h3 {
+    width: 60%;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 35%;
+    column-count: 2;
+    margin-bottom: 5%;
+    padding-right: 5%;
+    margin-top: 2%;
+}
+
+.modal-content h5 {
+    width: 60%;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 110%;
+    margin-top: -3.5%;
+    margin-left: 35%;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+
+.modal-content p {
+    width: 60%;
+    color: #313131;
     font-size: 0.875rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 140%; /* 1.225rem */
-    letter-spacing: 0.04375rem;
+    line-height: 130%;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-left: 35%;
 }
 
-#insta {
+.close {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 9%;
 }
 
-#linkedin {
+.text1 {
+    font-weight: 2800;
+    color: #313131;
 }
 
-.socialLinks {
-    margin-top: -7rem;
-    margin-left: -6rem;
-    margin-bottom: 27%;
-    transform: scale(0.3);
-    display: flex;
+.text2 {
+    color: #A3A3A3;
+}
+
+.contacts {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-bottom: 60px;
+}
+
+.contacts h2 {
+    padding: 0;
+    width: 80px;
+    margin-top: 30px;
+}
+
+.contacts-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: -3.5%;
+    padding: 0;
+}
+
+.contacts ul {
+    margin-left: 20%;
+    padding-left: 0;
+}
+
+.links ul a {
+    letter-spacing: 0.75px;
+}
+
+.svg-links {
+    margin-left: 20%;
+}
+
+#showMoreButton:hover {
+    background-color: #F8F8F8;
+    color: #0C0B0A;
+}
+
+.four-headers {
+    margin-top: -0.05em;
 }
 }
 
 @media screen and (min-width: 451px) and (max-width: 1280px) {
-    body {
-        margin-left: 2%;
-        margin-right: 2%;
-        max-width: 100%;
-        font-size: 16px;
-    }
     
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 3rem;
+header {
         border-bottom: 1px solid #F8F8F8;
-        padding-left: 2%;
-        padding-right: 2%;
-    }
-
-    .non-mobile {
-        display: block;
-    }
-    
-    #main-logo {
-        width: 3rem;
-        margin-right: 55%;
-    }
-    
-    header a {
-        text-decoration: none;
-        color: #F8F8F8;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-    
-    .welcome {
-        width: 96%;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        position: relative;
-        box-sizing: border-box;
-    }
-    
-    .welcome h1 {
-        font-style: normal;
-        font-weight: 500;
-        line-height: 80%; /* 5rem */
-        text-transform: uppercase;
-        opacity: 0;
-        animation: fadeIn 2s ease-in forwards;
-        width: 50%;
-        height: 25%;
-        order: -1;
-        font-size: 8vw; /* Set the font size using viewport width (vw) unit */
-        max-width: 100%;
-        overflow: hidden;
-        margin: 0 0;
-    }
-
-    .first-left {
-        width: 100%;
-        display: block;
-        z-index: 2;
-        left: 7%;
-        top: 51%;
-        position: absolute;
-    }
-
-    .second-right {
-        width: 100%;
-        z-index: 1;
-        position: absolute;
-        transform: translate(-10%, -10%);
-        top: 60%;
-        text-align: right;
-        left: 7%;
-    }
-
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    
-    .welcome p {
-        font-size: 1.5vw; /* Set the font size using viewport width (vw) unit */
-        max-width: 100%;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        margin-top: 61%;
-        margin-right: 36%;
-        z-index: 1;
-        align-self: flex-end;
-        justify-self: flex-end;
-    }
-    
-    #welcome-img {
-        width: 90%;
-        height: 63%;
-        max-width: 100%;
-        max-height: 100%;
-        position: absolute;
-        z-index: -1;
-        margin-left: 2%;
-        overflow: hidden;
-        top: 0;
-        left: 5%;
-    }
-    
-    #down-btn {
-        width: 3%;
-        padding-top: 3%;
-        padding-left: 34%;
-        order: 4;
-        margin-bottom: 15%;
-        margin-left: 4%;
-    }
-
-    .about {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-        padding-bottom: 15%;
-    }
-
-    .about h2 {
-        margin-right: 14rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-
-    .about h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
-
-    .about p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
-
-    .about img {
-        width: 100%;
-        height: auto;
-        filter: saturate(0);
-    }
-
-    .expertise {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-    }
-
-    .expertise h2 {
-        padding-right: 12.5rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-
-    .expertise h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
-
-    .expertise p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
-
-    .accordion {
-        display: flex;
-        flex-direction: column;
-        padding-left: 17rem;
-    }
-    
-    .accordion-section a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #F8F8F8;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-    
-    .accordion-section > a > img {
-        float: inline-end;
-        width: 1.5rem;
-        height: 1.5rem;
-        align-items: flex-end;
-    }
-    
-    .accordion-section {
-        padding-top: 2%;
-        padding-bottom: 2%;
-        border-top: 1px solid rgba(248, 248, 248, 0.40);
-    }
-    
-    .accordion-content {
-        display: none;
-        padding-top: 5%;
-        margin-left: -0.5rem;
-    }
-    
-    .two-column-layout {
-        display: flex;
-    }
-    
-    .column.date-column {
-        flex: 35; 
-        padding: 10px; 
-        color: #828181;
-    }
-    
-    .column.info-column {
-        flex: 45; 
-        padding: 10px; 
-        color: #818181 !important;
-    }
-    
-    .column.info2-column {
-        flex: 45; 
-        padding: 10px; 
-        color: #818181 !important;
-    }
-      
-    .column.description-column {
-        flex: 65; 
-        padding: 10px;
-        color: #828181;
-    }
-    
-    .highlight-info {
-        color: #F8F8F8;
-    }    
-    
-    .end-line-info {
-        float: inline-end;
-        flex: 45; 
-        color: #f8f8f8;
-    }
-    
-    .end-line-desc {
-        flex: 45; 
-        padding: 10px; 
-        color: #f8f8f8;
-    }
-    
-    .languages {
-        border-bottom: 1px solid rgba(248, 248, 248, 0.40); 
-        margin-bottom: 25%;
-    }
-
-    .works {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-    }
-
-    .works h2 {
-        padding-right: 12.5rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-
-    .works h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
-
-    .works p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
-
-    .projects {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 0.5rem; /* Adjust the gap between rows if needed */
-        place-items: center;
-        margin-left: 17rem;
-    }
-    
-    .grid-item {
-        background-color: #f0f0f0;
-        place-items: center;
-        width: 100%;
-        height: 13.125rem;
-        display: flex;
-    }
-    
-    .grid-item h2 {
-        opacity: 1;
-        color: white;
-        text-align: center;
-        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
-        font-family: Neue Montreal;
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 110%;
-        width: 100%;
-    }
-
-    #project1 {
-        background-image: url(./pics/Ufa.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project2 {
-        background-image: url(./pics/BarcelonaAir.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project3 {
-        background-image: url(./pics/UfaPublicPlaces.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project4 {
-        background-image: url(./pics/UfaMethodology.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project5 {
-        background-image: url(./pics/YerevanHeatIsland.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project6 {
-        background-image: url(./pics/YerevanHousing.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project7 {
-        background-image: url(./pics/YerevanGreenery.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    .project {
-        cursor: pointer;
-    }
-    
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1;
-    }
-    
-    .modal-content {
-        height: 85%;
-        width: 100%;
-        background-color: rgb(255, 255, 255);
-        color: rgba(0, 0, 0);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-        overflow: scroll;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    .modal-content img {
-        max-width: 100%;  
-        height: auto;
-        margin: 0 auto;
-    }
-    
-    .modal-content h4 {
-        width: 100%;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 110%;
-        margin-top: 5%;
-        margin-left: 5%;
-        box-sizing: border-box;
-    }
-      
-    .modal-content h3 {
-        width: 100%;
-        font-size: 0.8125rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        margin-top: 3%;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: 5%;
-        column-count: 2;
-        margin-bottom: 5%;
-        padding-right: 5%;
-    }
-    
-    .modal-content h5 {
-        width: 75%;
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 110%;
-        margin-top: 5%;
-        margin-left: 5%;
-        position: relative;
-        box-sizing: border-box;
-    }
-    
-    .modal-content p {
-        width: 75%;
-        color: #313131;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-        margin-top: 3%;
-        position: relative;
-        box-sizing: border-box;
         margin-left: 0;
-    }
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+        margin-bottom: 4.5em;
+}
     
-    .close {
-        margin: 3%;
-        font-size: 2rem;
-        cursor: pointer;
-        float: inline-end;
-    }
-
-    .text1 {
-        font-weight: 2800;
-    }
-    
-    .text2 {
-        color: #A3A3A3;
-    }
-    
-    /*#show-more {
-        width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
-        height: 25%;
-        background-color: #0C0B0A;
-        color: #F8F8F8;
-        border: 1px solid #F8F8F8;
-        font-size: 0.9375rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 120%;
-        letter-spacing: -0.01875rem;
-        margin-top: -50%;
-    }*/
-    
-    .hidden {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 0.5rem; /* Adjust the gap between rows if needed */
-        place-items: center;
-        height: 13.125rem;
-        /*display: none;*/
-        width: 100%;
-    }
-    
-    #open-modal-btn {
-        cursor: pointer;
-    }
-    
-    .container {
-        width: 100%;
-        height: 25%;
-        /*margin-top: -48%;*/
-    }
-    
-    .visible {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 1rem; /* Adjust the gap between rows if needed */
-        margin-right: 5%;
-        margin-left: 5%;
-        place-items: center;
-        height: 13.125rem;
-        margin-top: -110%;
-    }
-    
-    .ps-text {
-        width: 81%;
-        margin-top: 15%;
-        font-size: 1.375rem;
-        font-style: italic;
-        font-weight: 400;
-        line-height: 120%;
-        padding-right: 5%;
-        margin-left: 17rem;
-    }
-    
-    .crimson-text {
-        color: #993308;
-    }
-    
-    .contacts {
-        border-top: 1px solid #993308;
-        margin-top: 2%;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .contacts h3 {
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-        padding-top: 7%;
-        padding-right: 5%;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .contacts h2 {
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        opacity: 0.5;
-        text-transform: uppercase;
-        padding-top: 13%;
-        padding-right: 12.5rem;
-        width: 75%;
-    }
-    
-    .contacts p {
-        width: 65%;
-        margin-top: 5%;
-    }
-    
-    .contacts p > a {
-        text-decoration: none;
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 1.225rem */
-        letter-spacing: 0.04375rem;
-    }
-    
-    #insta {
-    }
-    
-    #linkedin {
-    }
-    
-    .socialLinks {
-        margin-top: 9rem;
-        margin-left: -42rem !important;
-        margin-bottom: 27%;
-        transform: scale(0.3);
-    }
+nav li:nth-child(1),
+nav li:nth-child(2) {
+        display: block;
+        margin-right: 2.5em;
 }
 
-@media screen and (min-width: 1280px) and (max-width: 2560px) {
-    body {
-        margin-left: 2%;
-        margin-right: 2%;
-        max-width: 100%;
-        font-size: 16px;
-    }
-    
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 3rem;
-        border-bottom: 1px solid #F8F8F8;
-        padding-left: 2%;
-        padding-right: 2%;
-    }
+.welcome {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
 
-    .non-mobile {
-        display: block;
-    }
-    
-    #main-logo {
-        width: 3rem;
-        margin-right: 55%;
-    }
-    
-    header a {
-        text-decoration: none;
-        color: #F8F8F8;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-    
-    .welcome {
-        width: 96%;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        position: relative;
-        box-sizing: border-box;
-    }
-    
-    .welcome h1 {
-        font-style: normal;
-        font-weight: 500;
-        line-height: 80%; /* 5rem */
-        text-transform: uppercase;
-        opacity: 0;
-        animation: fadeIn 2s ease-in forwards;
-        width: 50%;
-        height: 25%;
-        order: -1;
-        font-size: 8vw; /* Set the font size using viewport width (vw) unit */
-        max-width: 100%;
-        overflow: hidden;
-        margin: 0 0;
-    }
+.welcome-description h1 {
+    margin: -1.2em 0px 0;
+    flex: 1;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 80%;
+    text-transform: uppercase;
+}
 
-    .first-left {
-        width: 100%;
-        display: block;
-        z-index: 2;
-        left: 7%;
-        top: 51%;
-        position: absolute;
-    }
+.welcome-description {
+    margin-bottom: 152px;
+}
 
-    .second-right {
-        width: 100%;
-        z-index: 1;
-        position: absolute;
-        transform: translate(-10%, -10%);
-        top: 60%;
-        text-align: right;
-        left: 7%;
-    }
+.welcome-description img {
+    max-height: 470px;
+    height: auto;
+}
 
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-    
-    .welcome p {
-        font-size: 1.5vw; /* Set the font size using viewport width (vw) unit */
-        max-width: 100%;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        margin-top: 61%;
-        margin-right: 36%;
-        z-index: 1;
-        align-self: flex-end;
-        justify-self: flex-end;
-    }
-    
-    #welcome-img {
-        width: 90%;
-        height: 63%;
-        max-width: 100%;
-        max-height: 100%;
-        position: absolute;
-        z-index: -1;
-        margin-left: 2%;
-        overflow: hidden;
-        top: 0;
-        left: 5%;
-    }
-    
-    #down-btn {
-        width: 3%;
-        padding-top: 3%;
-        padding-left: 34%;
-        order: 4;
-        margin-bottom: 15%;
-        margin-left: 4%;
-    }
+.first-line {
+    margin-top: -1%;
+}
 
-    .about {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-        padding-bottom: 15%;
-    }
+.second-line {
+    margin-top: 1%;
+}
 
-    .about h2 {
-        margin-right: 14rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
+.welcome-rel p {
+    color: #828181;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-left: 21%;
+    margin-top: 42px;
+    margin-bottom: 16px;
+}
 
-    .about h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
+.welcome-rel a {
+    margin-left: 21%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-    .about p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
+.about {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
 
-    .about img {
-        width: 100%;
-        height: auto;
-        filter: saturate(0);
-    }
+.about-description {
+    margin-bottom: 180px;
+}
 
-    .expertise {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-    }
+.about-description h2 {
+    padding: 0;
+    margin: 20px 0 0;
+    width: 45px;
+}
 
-    .expertise h2 {
-        padding-right: 12.5rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
+.about-content img {
+    margin-left: 26.5%;
+    width: 100%;
+    max-width: 757px;
+}
 
-    .expertise h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
+.about-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 26.5%;
+    margin-top: -2%;
+    margin-bottom: 10px;
+}
 
-    .expertise p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
+.about-content p {
+    float: left;
+    margin-left: 26.5%;
+    width: 430px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
-    .accordion {
-        display: flex;
-        flex-direction: column;
-        padding-left: 17rem;
-    }
-    
-    .accordion-section a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #F8F8F8;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
-    
-    .accordion-section > a > img {
-        float: inline-end;
-        width: 1.5rem;
-        height: 1.5rem;
-        align-items: flex-end;
-    }
-    
-    .accordion-section {
-        padding-top: 2%;
-        padding-bottom: 2%;
-        border-top: 1px solid rgba(248, 248, 248, 0.40);
-    }
-    
-    .accordion-content {
-        display: none;
-        padding-top: 5%;
-        margin-left: -0.5rem;
-    }
-    
-    .two-column-layout {
-        display: flex;
-    }
-    
-    .column.date-column {
-        flex: 35; 
-        padding: 10px; 
-        color: #828181;
-    }
-    
-    .column.info-column {
-        flex: 45; 
-        padding: 10px; 
-        color: #828181 !important;
-    }
-    
-    .column.info2-column {
-        flex: 45; 
-        padding: 10px; 
-        color: #818181 !important;
-    }
-      
-    .column.description-column {
-        flex: 65; 
-        padding: 10px;
-        color: #828181;
-    }
-    
-    .highlight-info {
-        color: #F8F8F8;
-    }    
-    
-    .end-line-info {
-        float: inline-end;
-        color: #f8f8f8;
-    }
+.experience {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
 
-    .end-line-desc {
-        flex: 45; 
-        padding: 10px; 
-        color: #f8f8f8;
-    }
-    
-    
-    .languages {
-        border-bottom: 1px solid rgba(248, 248, 248, 0.40); 
-        margin-bottom: 25%;
-    }
+.experience-description h2 {
+    padding: 0;
+    margin: 20px 0 0;
+    width: 80px;
+}
 
-    .works {
-        border-top: 1px solid #993308;
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding-top: 2%;
-    }
+.experience-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 26.5%;
+    margin-top: -2%;
+    padding: 0;
+}
 
-    .works h2 {
-        padding-right: 12.5rem;
-        text-transform: uppercase;
-        opacity: 0.5;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-    }
+.experience-content > p {
+    margin-left: 26.5%;
+    width: 430px;
+}
 
-    .works h3 {
-        padding-bottom: 1.5rem;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-    }
+.accordion {
+    margin-left: 26.5%;
+    margin-bottom: 180px;
+}
 
-    .works p {
-        width: 25rem;
-        padding-bottom: 1.5rem;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-    }
+.projects-description{
+    margin-top: 0;
+    padding-top: 0;
+}
 
-    .projects {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 0.5rem; /* Adjust the gap between rows if needed */
-        place-items: center;
-        margin-left: 17rem;
-    }
-    
-    .grid-item {
-        background-color: #f0f0f0;
-        place-items: center;
-        width: 100%;
-        height: 13.125rem;
-        display: flex;
-    }
-    
-    .grid-item h2 {
-        opacity: 1;
-        color: white;
-        text-align: center;
-        text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.50);
-        font-family: Neue Montreal;
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 110%;
-        width: 100%;
-    }
+.projects {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
 
-    #project1 {
-        background-image: url(./pics/Ufa.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project2 {
-        background-image: url(./pics/BarcelonaAir.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project3 {
-        background-image: url(./pics/UfaPublicPlaces.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project4 {
-        background-image: url(./pics/UfaMethodology.jpg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project5 {
-        background-image: url(./pics/YerevanHeatIsland.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project6 {
-        background-image: url(./pics/YerevanHousing.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    #project7 {
-        background-image: url(./pics/YerevanGreenery.jpeg);
-        background-size: cover;
-        background-position: center center;
-    }
-    
-    .project {
-        cursor: pointer;
-    }
-    
-    .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        z-index: 1;
-    }
-    
-    .modal-content {
-        height: 85%;
-        width: 100%;
-        background-color: rgb(255, 255, 255);
-        color: rgba(0, 0, 0);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
-        overflow: scroll;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    .modal-content img {
-        max-width: 100%;  
-        height: auto;
-        margin: 0 auto;
-    }
-    
-    .modal-content h4 {
-        width: auto;
-        margin-right: 20%;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 110%;
-        margin-top: 5%;
-        margin-left: 5%;
-        box-sizing: border-box;
-    }
-      
-    .modal-content h3 {
-        width: 100%;
-        font-size: 0.8125rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        margin-top: 3%;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: 25%;
-        column-count: 2;
-        margin-bottom: 5%;
-        padding-right: 5%;
-    }
-    
-    .modal-content h5 {
-        width: 75%;
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: normal;
-        line-height: 110%;
-        margin-top: 5%;
-        margin-left: -10%;
-        position: relative;
-        box-sizing: border-box;
-    }
-    
-    .modal-content p {
-        width: 75%;
-        color: #313131;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 130%;
-        margin-top: 3%;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: 25%;
-    }
-    
-    .close {
-        margin: 3%;
-        font-size: 2rem;
-        cursor: pointer;
-        float: inline-end;
-    }
+.projects-description > h2 {
+    padding-top: 0;
+    margin-top: 30px;
+    color: rgba(153, 51, 8, 0.5);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    width: 80px;
+}
 
-    .text1 {
-        font-weight: 2800;
-    }
-    
-    .text2 {
-        color: #A3A3A3;
-    }
-    
-    /*#show-more {
-        width: 90%;
-        padding-left: 5%;
-        padding-right: 5%;
-        height: 25%;
-        background-color: #0C0B0A;
-        color: #F8F8F8;
-        border: 1px solid #F8F8F8;
-        font-size: 0.9375rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 120%;
-        letter-spacing: -0.01875rem;
-        margin-top: -50%;
-    }*/
-    
-    .hidden {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 0.5rem; /* Adjust the gap between rows if needed */
-        place-items: center;
-        height: 13.125rem;
-        /*display: none;*/
-        width: 100%;
-    }
-    
-    #open-modal-btn {
-        cursor: pointer;
-    }
-    
-    .container {
-        width: 100%;
-        height: 25%;
-        /*margin-top: -48%;*/
-    }
-    
-    .visible {
-        display: grid;
-        grid-template-columns: 1fr; /* One centered column */
-        grid-template-rows: repeat(7, 1fr); /* Seven rows */
-        gap: 1rem; /* Adjust the gap between rows if needed */
-        margin-right: 5%;
-        margin-left: 5%;
-        place-items: center;
-        height: 13.125rem;
-        margin-top: -110%;
-    }
-    
-    .ps-text {
-        width: 81%;
-        margin-top: 15%;
-        font-size: 1.375rem;
-        font-style: italic;
-        font-weight: 400;
-        line-height: 120%;
-        padding-right: 5%;
-        margin-left: 17rem;
-    }
-    
-    .crimson-text {
-        color: #993308;
-    }
-    
-    .contacts {
-        border-top: 1px solid #993308;
-        margin-top: 2%;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .contacts h3 {
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 2.75rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%; /* 2.75rem */
-        text-transform: uppercase;
-        padding-top: 7%;
-        padding-right: 5%;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .contacts h2 {
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%;
-        opacity: 0.5;
-        text-transform: uppercase;
-        padding-top: 13%;
-        padding-right: 12.5rem;
-        width: 75%;
-    }
-    
-    .contacts p {
-        width: 65%;
-        margin-top: 5%;
-    }
-    
-    .contacts p > a {
-        text-decoration: none;
-        color: #F8F8F8;
-        font-family: Neue Montreal;
-        font-size: 0.875rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 1.225rem */
-        letter-spacing: 0.04375rem;
-    }
-    
-    #insta {
-    }
-    
-    #linkedin {
-    }
-    
-    .socialLinks {
-        margin-top: 9rem;
-        margin-left: -40rem;
-        margin-bottom: 27%;
-        transform: scale(0.3);
-    }
+.proj-desc-2 h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 20%;
+    margin-top: -3%;
+    padding: 0;
+}
+
+.proj-desc-2 p {
+    margin-left: 20%;
+    width: 430px;
+}
+
+.projects-closing-text {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 180px;
+    margin-bottom: 50px;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.red-ps {
+    margin-left: 5px;
+}
+
+.first-line-end {
+    margin-left: 20%;
+}
+
+.second-line-end {
+
+}
+
+.grid-item h2 {
+    opacity: 0;
+}
+
+.grid-item h2:hover {
+    opacity: 1;
+}
+
+.projects-container {
+    width: auto;
+    margin-left: 25.5%;
+}
+
+.projects {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+.proj-desc-2 h3 {
+    margin-left: 25.5%;
+}
+
+.proj-desc-2 p {
+    margin-left: 25.5%;
+}
+
+#project1 {
+    width: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    height: 93%;
+    width: 70%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.modal-content img {
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 0;
+    object-fit: cover;
+    height: 50%;
+}
+
+.modal-content h4 {
+    width: 30%;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    margin-top: 5%;
+    margin-left: 5%;
+    box-sizing: border-box;
+}
+  
+.modal-content h3 {
+    width: 60%;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 35%;
+    column-count: 2;
+    margin-bottom: 5%;
+    padding-right: 5%;
+    margin-top: 2%;
+}
+
+.modal-content h5 {
+    width: 60%;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 110%;
+    margin-top: -3.5%;
+    margin-left: 35%;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    margin-right: 5%;
+}
+
+.modal-content p {
+    width: 60%;
+    color: #313131;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-left: 35%;
+}
+
+.close {
+    font-size: 2rem;
+    cursor: pointer;
+    margin-right: 9%;
+}
+
+.text1 {
+    font-weight: 2800;
+    color: #313131;
+}
+
+.text2 {
+    color: #A3A3A3;
+}
+
+.projects-closing-text {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 5em;
+    margin-bottom: 2.5em;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.first-line-end {
+    margin-left: 25.5%;
+}
+
+.contacts {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 60px;
+}
+
+.contacts h2 {
+    padding: 0;
+    width: 80px;
+    margin-top: 20px;
+}
+
+.contacts-content h3 {
+    font-family: 'NeueMontreal-Medium';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+    text-transform: uppercase;
+    margin-left: 25.5%;
+    margin-top: -2%;
+    padding: 0;
+}
+
+.contacts ul {
+    margin-left: 25.5%;
+    padding-left: 0;
+}
+
+.links ul a {
+    letter-spacing: 0.75px;
+}
+
+.svg-links {
+    margin-left: 25.5%;
+}
+
+#showMoreButton:hover {
+    background-color: #F8F8F8;
+    color: #0C0B0A;
+}
+
+.four-headers {
+    margin-top: -0.05em;
+}
 }
